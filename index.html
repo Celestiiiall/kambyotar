@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>RadTech BIT203 Study Companion</title>
+  <meta
+    name="description"
+    content="A plain-language BIT203 study website for radiologic technologists, built from Units 1 to 5."
+  >
+  <link rel="stylesheet" href="styles.css">
+  <script src="content.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero panel">
+      <div class="hero-copy">
+        <p class="eyebrow">BIT203 Course Companion</p>
+        <h1>Management Information Systems, explained for a radiologic technologist</h1>
+        <p class="hero-text">
+          This study site turns Units 1 to 5 into plain English. If the slides say
+          "business," think "imaging department" so the ideas connect to RIS, PACS,
+          scheduling, reporting, and patient flow.
+        </p>
+        <div class="hero-actions">
+          <button id="jumpToQuizButton" class="primary-button" type="button">Practice this unit</button>
+          <button id="jumpToGlossaryButton" class="ghost-button" type="button">Open term translator</button>
+        </div>
+      </div>
+      <div class="hero-panel">
+        <p class="eyebrow">You Already Know The Workflow</p>
+        <h2>Use your daily tools as the mental model</h2>
+        <ul class="hero-list">
+          <li>RIS tracks orders, appointments, and exam status.</li>
+          <li>PACS stores and moves images.</li>
+          <li>EHR shares patient history and reports.</li>
+          <li>Dashboards support staffing, quality, and turnaround decisions.</li>
+        </ul>
+        <div class="stat-grid">
+          <div class="stat-card">
+            <strong id="unitCount">0</strong>
+            <span>Units simplified</span>
+          </div>
+          <div class="stat-card">
+            <strong id="termCount">0</strong>
+            <span>Key terms translated</span>
+          </div>
+          <div class="stat-card">
+            <strong id="masteryCount">0%</strong>
+            <span>Quiz mastery</span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="workspace">
+      <aside class="sidebar">
+        <section class="panel">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Course Roadmap</p>
+              <h2>Five study units</h2>
+            </div>
+          </div>
+          <div id="unitNav" class="unit-nav" aria-label="Unit navigation"></div>
+        </section>
+
+        <section class="panel">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Progress</p>
+              <h2>Study snapshot</h2>
+            </div>
+          </div>
+          <div id="masterySnapshot" class="mastery-snapshot"></div>
+          <button id="resetProgressButton" class="ghost-button full-width" type="button">
+            Reset browser progress
+          </button>
+        </section>
+      </aside>
+
+      <section class="main-content">
+        <section class="panel toolbar">
+          <div class="toolbar-block">
+            <p class="eyebrow">Study Mode</p>
+            <div id="modeSwitcher" class="mode-switcher" aria-label="Study mode"></div>
+          </div>
+          <label class="search-box" for="searchInput">
+            <span>Search terms, topics, or examples</span>
+            <input
+              id="searchInput"
+              type="search"
+              placeholder="Try: TPS, cloud, database, prototyping"
+              autocomplete="off"
+            >
+          </label>
+        </section>
+
+        <article id="unitDetail" class="panel unit-detail" aria-live="polite"></article>
+
+        <section id="translator" class="panel glossary-section">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Term Translator</p>
+              <h2>What the IT words mean in your world</h2>
+            </div>
+          </div>
+          <div id="glossaryList" class="glossary-list"></div>
+        </section>
+
+        <section class="panel checklist-section">
+          <div class="section-head">
+            <div>
+              <p class="eyebrow">Exam Readiness</p>
+              <h2>Checklist before you stop studying</h2>
+            </div>
+          </div>
+          <div id="revisionChecklist" class="revision-checklist"></div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <noscript>
+    This study companion needs JavaScript enabled to show the unit navigator, quizzes,
+    and glossary filters.
+  </noscript>
+</body>
+</html>
