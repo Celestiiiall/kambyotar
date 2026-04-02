@@ -13,7 +13,7 @@ window.STUDY_DATA = {
     {
       id: "radiology",
       label: "Radiology Lens",
-      description: "Relate the topic to RIS, PACS, scheduling, imaging, and reporting."
+      description: "Optional: relate the topic to RIS, PACS, scheduling, imaging, and reporting."
     },
     {
       id: "exam",
@@ -28,13 +28,13 @@ window.STUDY_DATA = {
       chapter: "Chapter 1",
       title: "Information Systems in Business Today",
       objective: "Understand why information systems matter and what makes up a complete information system.",
-      quickWin: "If the lecture says 'business objectives,' think about how an imaging department tries to reduce waiting time, avoid repeat exams, and move reports faster.",
+      quickWin: "If the lecture says 'business objectives,' think about how any company tries to reduce delays, avoid mistakes, and serve customers better.",
       examFocus: "Know the difference between information technology and information systems, the input-processing-output-feedback cycle, and the six strategic business objectives.",
       guidedLesson: {
         intro: "This unit is basically saying that good computer systems help people work with the right information instead of guessing.",
         bigIdea: "A system is not just a machine. It is the machine, the people, the rules, and the information all working together.",
         whyItMatters: "When information is clear and shared properly, work gets faster, mistakes drop, and decisions get better.",
-        atWork: "In radiology, this is the difference between everyone chasing paper and everyone seeing the same order, worklist, images, and report flow.",
+        atWork: "In a business, this is the difference between people guessing from scattered notes and people working from shared, organized information.",
         sayBack: "A simple way to explain this unit is: systems help people collect information, use it, and act on it better.",
         steps: [
           "Information goes into the system.",
@@ -78,13 +78,13 @@ window.STUDY_DATA = {
       ],
       scenarios: [
         {
-          title: "Imaging order journey",
-          summary: "A patient order shows how one system links many steps.",
+          title: "Customer order journey",
+          summary: "One customer order shows how a single system can link many steps.",
           steps: [
-            "The physician enters the order and patient details.",
-            "Scheduling assigns a time slot and updates the worklist.",
-            "The technologist completes the exam and sends images to PACS.",
-            "The radiologist reads the study and the report returns to the EHR."
+            "A customer order is entered into the system.",
+            "Inventory, billing, and shipping records are updated.",
+            "The product is delivered or the service is completed.",
+            "Managers use the final information to track performance and fix delays."
           ],
           takeaway: "The exam is not just 'software.' It is a coordinated information system moving data across people and departments."
         },
@@ -92,9 +92,9 @@ window.STUDY_DATA = {
           title: "Better decisions from real-time data",
           summary: "Information reduces guesswork.",
           steps: [
-            "A dashboard shows wait times rising in ultrasound.",
-            "A supervisor shifts staff before delays become severe.",
-            "Patients are seen faster and overtime costs fall."
+            "A dashboard shows sales delays rising in one region.",
+            "A manager shifts staff or stock before the problem grows.",
+            "Customers are served faster and costs stay under control."
           ],
           takeaway: "This is improved decision making, one of the main reasons systems are valuable."
         }
@@ -107,12 +107,12 @@ window.STUDY_DATA = {
       quiz: [
         {
           id: "u1-q1",
-          prompt: "Which choice is the best example of feedback in an imaging workflow?",
+          prompt: "Which choice is the best example of feedback in an information system?",
           options: [
-            "The physician enters a CT order.",
-            "The system stores the images in PACS.",
+            "A customer order is entered into the system.",
+            "A file is stored in the database.",
             "A supervisor reviews dashboard delays and changes staffing.",
-            "The patient receives an appointment text message."
+            "A customer receives an order confirmation."
           ],
           answer: 2,
           explain: "Feedback is information returned to help evaluate or correct the process. Staffing changes based on dashboard results are feedback."
@@ -131,7 +131,7 @@ window.STUDY_DATA = {
         },
         {
           id: "u1-q3",
-          prompt: "Reducing report turnaround time through better workflow is mainly an example of:",
+          prompt: "Reducing service delays through better workflow is mainly an example of:",
           options: [
             "Operational excellence",
             "Data redundancy",
@@ -149,13 +149,13 @@ window.STUDY_DATA = {
       chapter: "Chapters 2 and 3",
       title: "Business Processes, Enterprise Systems, and Competition",
       objective: "Learn how processes flow through an organization, how different systems support different managers, and how systems create strategic value.",
-      quickWin: "Translate 'order fulfillment' into 'exam fulfillment': booking, preparation, imaging, reporting, billing, and follow-up.",
+      quickWin: "Think of order fulfillment as the full path from customer request to final delivery, not just one isolated task.",
       examFocus: "Know business processes, TPS/MIS/DSS/ESS, enterprise applications, collaboration tools, and Porter's competitive forces with IT strategies.",
       guidedLesson: {
         intro: "This unit says work happens in steps, and different systems help different people at different levels.",
         bigIdea: "A business process is just the full chain of work from beginning to end, not one tiny task in the middle.",
         whyItMatters: "If one step is slow or disconnected, the whole process suffers. Good systems connect the chain.",
-        atWork: "In imaging, the process starts with the order and ends when the report reaches the right person and billing is complete.",
+        atWork: "In business terms, the process starts with a customer request and ends when the product or service is delivered and recorded.",
         sayBack: "A simple way to explain this unit is: systems help the daily work, help managers see reports, and help organizations link departments together.",
         steps: [
           "Daily systems record the work being done.",
@@ -199,25 +199,25 @@ window.STUDY_DATA = {
       ],
       scenarios: [
         {
-          title: "One patient, many system layers",
-          summary: "The same exam creates data for several management levels.",
+          title: "One sale, many system layers",
+          summary: "The same transaction creates information for several management levels.",
           steps: [
-            "TPS records the appointment, check-in, and payment.",
-            "MIS converts those transactions into weekly volume and no-show reports.",
-            "DSS helps managers test how staffing changes may reduce delays.",
-            "ESS shows imaging performance trends to senior leadership."
+            "TPS records the sale, payment, and shipping details.",
+            "MIS converts those transactions into weekly summary reports.",
+            "DSS helps managers test how staffing or pricing changes may affect results.",
+            "ESS shows broad performance trends to senior leadership."
           ],
           takeaway: "The systems are related, but they serve different questions and audiences."
         },
         {
           title: "Collaboration in practice",
-          summary: "Good systems help teams share knowledge, not just store data.",
+          summary: "Good systems help teams share knowledge, not just store files.",
           steps: [
-            "Technologists document contrast reaction steps in a shared knowledge base.",
-            "Staff use messaging and intranet tools to spread updates quickly.",
-            "Managers keep procedures consistent across shifts and sites."
+            "Employees document best practices in a shared knowledge base.",
+            "Teams use messaging and intranet tools to spread updates quickly.",
+            "Managers keep procedures more consistent across departments."
           ],
-          takeaway: "Collaboration tools matter because healthcare work is team-based and time-sensitive."
+          takeaway: "Collaboration tools matter because business work is shared, fast-moving, and cross-functional."
         }
       ],
       pitfalls: [
@@ -228,7 +228,7 @@ window.STUDY_DATA = {
       quiz: [
         {
           id: "u2-q1",
-          prompt: "Which system is best matched with capturing daily appointments, patient check-ins, and payments?",
+          prompt: "Which system is best matched with capturing daily sales, payments, and shipping records?",
           options: [
             "TPS",
             "ESS",
@@ -240,7 +240,7 @@ window.STUDY_DATA = {
         },
         {
           id: "u2-q2",
-          prompt: "A manager wants a monthly report showing MRI volume by day and by scanner. This is mainly:",
+          prompt: "A manager wants a monthly report showing sales by product and region. This is mainly:",
           options: [
             "CRM",
             "MIS",
@@ -252,7 +252,7 @@ window.STUDY_DATA = {
         },
         {
           id: "u2-q3",
-          prompt: "An imaging center uses online booking and rapid report delivery to stand out from competitors. Which strategy fits best?",
+          prompt: "A company uses easier online ordering and faster service to stand out from competitors. Which strategy fits best?",
           options: [
             "Product differentiation",
             "Data redundancy",
@@ -270,13 +270,13 @@ window.STUDY_DATA = {
       chapter: "Chapter 5",
       title: "IT Infrastructure and Emerging Technologies",
       objective: "Understand the technology foundation an organization needs and the main trends affecting hardware, software, and cost decisions.",
-      quickWin: "If a modality room cannot send images, the problem may be in the infrastructure, not the scanner alone.",
+      quickWin: "If employees cannot access a system or website, the problem may be in the infrastructure, not the application alone.",
       examFocus: "Know the meaning of IT infrastructure, its major components, hardware and software trends, and the management ideas of scalability, governance, and total cost of ownership.",
       guidedLesson: {
         intro: "This unit is about the hidden tech foundation underneath the apps people actually see.",
         bigIdea: "Infrastructure is the support system for the support systems. It keeps the computers, storage, internet, and software alive.",
         whyItMatters: "If the foundation is weak, even good software feels broken, slow, or unreliable.",
-        atWork: "When PACS is slow, the scanner may be fine. The real issue might be the server, storage, network, or cloud setup behind it.",
+        atWork: "When a business system is slow, the visible app may be fine. The real issue might be the server, storage, network, or cloud setup underneath it.",
         sayBack: "A simple way to explain this unit is: infrastructure is the base layer that lets all the other technology work.",
         steps: [
           "Build the technical foundation with hardware, software, storage, and networks.",
@@ -320,20 +320,20 @@ window.STUDY_DATA = {
       ],
       scenarios: [
         {
-          title: "When PACS feels slow",
+          title: "When a business system feels slow",
           summary: "Users often blame the visible application, but the issue may be deeper.",
           steps: [
-            "A technologist notices images take too long to open.",
+            "Employees notice pages take too long to load.",
             "The cause may be server load, storage performance, network congestion, or virtualization limits.",
-            "The fix may involve infrastructure changes rather than retraining the user."
+            "The fix may involve infrastructure changes rather than user retraining."
           ],
-          takeaway: "Infrastructure is the hidden layer that supports visible clinical systems."
+          takeaway: "Infrastructure is the hidden layer that supports visible information systems."
         },
         {
-          title: "Cloud archive decision",
+          title: "Cloud hosting decision",
           summary: "Buying and renting infrastructure have different tradeoffs.",
           steps: [
-            "Leaders compare on-site image storage with a cloud archive service.",
+            "Leaders compare on-site servers with a cloud service.",
             "They review cost, security, reliability, workflow impact, and vendor agreements.",
             "They also include indirect costs such as maintenance and downtime risk."
           ],
@@ -372,7 +372,7 @@ window.STUDY_DATA = {
         },
         {
           id: "u3-q3",
-          prompt: "Why might edge computing matter in imaging environments?",
+          prompt: "Why might edge computing matter in systems that use sensors or real-time data?",
           options: [
             "It removes the need for databases.",
             "It helps reduce latency by placing processing closer to where data is generated.",
@@ -390,13 +390,13 @@ window.STUDY_DATA = {
       chapter: "Chapter 6",
       title: "Databases and Information Management",
       objective: "Understand why databases are better than separate files and how data can be organized for analysis and decision making.",
-      quickWin: "If patient details are different in two systems, you are already seeing the file-environment problem this unit describes.",
+      quickWin: "If customer details are different in two systems, you are already seeing the file-environment problem this unit describes.",
       examFocus: "Know file environment problems, DBMS capabilities, relational concepts, keys, database design, and business intelligence tools such as data warehouses.",
       guidedLesson: {
         intro: "This unit is mostly about keeping information in one organized place instead of letting it scatter everywhere.",
         bigIdea: "A database is a shared organized storage space for information. A DBMS helps people use it safely and properly.",
         whyItMatters: "When everyone stores the same data in different places, errors and confusion grow fast.",
-        atWork: "If a patient's phone number is different in registration, imaging, and billing, the department wastes time and makes mistakes.",
+        atWork: "If a customer's phone number is different in sales, shipping, and billing, the company wastes time and makes mistakes.",
         sayBack: "A simple way to explain this unit is: databases stop information from being duplicated, mismatched, and hard to find.",
         steps: [
           "Put related information into organized tables.",
@@ -440,22 +440,22 @@ window.STUDY_DATA = {
       ],
       scenarios: [
         {
-          title: "Duplicate patient data problem",
+          title: "Duplicate customer data problem",
           summary: "A mismatch across systems creates operational risk.",
           steps: [
-            "A patient changes phone number at registration.",
+            "A customer changes contact details.",
             "The new number appears in one system but not in another.",
-            "The reminder message goes to the wrong place and the patient misses the exam."
+            "A message or delivery update goes to the wrong place."
           ],
           takeaway: "This is data inconsistency caused by separate files and weak integration."
         },
         {
-          title: "Joining tables for quality reporting",
+          title: "Joining tables for management reporting",
           summary: "Relational databases make performance analysis possible.",
           steps: [
-            "An analyst pulls data from Patient, Exam, Modality, and Report tables.",
+            "An analyst pulls data from Customer, Order, Product, and Sales tables.",
             "The system joins related records using keys.",
-            "Managers see report turnaround by modality and by site."
+            "Managers see performance by product, region, or employee."
           ],
           takeaway: "This is why relational databases are powerful: they turn stored data into useful information."
         }
@@ -483,7 +483,7 @@ window.STUDY_DATA = {
           prompt: "Which situation best shows data redundancy?",
           options: [
             "One database table is backed up nightly.",
-            "The same patient address is stored in several separate departmental files.",
+            "The same customer address is stored in several separate departmental files.",
             "A query joins two tables.",
             "A dashboard summarizes exam volume."
           ],
@@ -496,7 +496,7 @@ window.STUDY_DATA = {
           options: [
             "A local folder for one employee's spreadsheet files",
             "A centralized repository that stores integrated data from multiple sources for analysis",
-            "A scanner console with image processing software",
+            "A stand-alone machine used for one narrow technical task",
             "A foreign key used in one table"
           ],
           answer: 1,
@@ -510,13 +510,13 @@ window.STUDY_DATA = {
       chapter: "Chapter 13",
       title: "Building Information Systems",
       objective: "Understand how systems are created, how they change organizations, and what development approaches are available.",
-      quickWin: "Think about implementing a new booking portal or replacing a paper-based contrast screening workflow. That is systems building in a clinical setting.",
+      quickWin: "Think about implementing a new customer portal or replacing a paper-based approval process. That is systems building in a business setting.",
       examFocus: "Know the levels of organizational change, the systems development process, structured vs. object-oriented design, prototyping, traditional life cycle, and outsourcing.",
       guidedLesson: {
         intro: "This unit explains how a new system goes from 'we have a problem' to 'the new tool is now live and people are using it.'",
         bigIdea: "Systems are built in stages. Good teams do not just jump into coding and hope for the best.",
         whyItMatters: "If a system is built without understanding the real problem, people end up with a shiny tool that does not actually help.",
-        atWork: "If a hospital wants a better booking portal, it should study the current mess first, design the fix, test it with real staff, then roll it out carefully.",
+        atWork: "If a company wants a better customer portal, it should study the current problem first, design the fix, test it with real users, then roll it out carefully.",
         sayBack: "A simple way to explain this unit is: first understand the problem, then design the fix, build it, test it, launch it, and keep improving it.",
         steps: [
           "Study the problem and decide what the new system must do.",
@@ -560,10 +560,10 @@ window.STUDY_DATA = {
       ],
       scenarios: [
         {
-          title: "Replacing a paper checklist",
+          title: "Replacing a paper approval process",
           summary: "The level of change depends on how much workflow is rethought.",
           steps: [
-            "A paper contrast screening form becomes a digital form.",
+            "A paper approval form becomes a digital form.",
             "If the same approval steps remain, the change is mostly automation.",
             "If the department removes duplicate steps and changes roles, it becomes rationalization or redesign."
           ],
@@ -573,8 +573,8 @@ window.STUDY_DATA = {
           title: "Prototype before full rollout",
           summary: "Early user feedback prevents expensive mistakes.",
           steps: [
-            "A small pilot version of a booking interface is shown to technologists and front desk staff.",
-            "Users point out confusing fields and missing alerts.",
+            "A small pilot version of a customer-facing interface is shown to real users and employees.",
+            "They point out confusing fields and missing features.",
             "The design is revised before the final system is built and deployed broadly."
           ],
           takeaway: "Prototyping is valuable when requirements are uncertain or the user interface matters a lot."
@@ -734,7 +734,7 @@ window.STUDY_DATA = {
   ],
   checklist: [
     "I can explain the difference between information technology and an information system.",
-    "I can use radiology examples to distinguish TPS, MIS, DSS, and ESS.",
+    "I can distinguish TPS, MIS, DSS, and ESS using course-style examples.",
     "I can name the main parts of IT infrastructure and describe at least two current trends.",
     "I can explain why a DBMS is better than separate departmental files.",
     "I can define primary key, foreign key, and referential integrity.",

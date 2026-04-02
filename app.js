@@ -179,6 +179,10 @@ function renderUnitNav() {
 
 function renderMainView() {
   const unit = window.STUDY_DATA.units[state.unitIndex];
+  const scenarioEyebrow = state.mode === "radiology" ? "Optional Radiology Lens" : "Course Scenarios";
+  const scenarioTitle = state.mode === "radiology"
+    ? "How this topic can map to radiology work"
+    : "How this topic appears in class-style examples";
   const concepts = unit.concepts.filter((concept) => matchesQuery([
     concept.term,
     concept.memoryHook,
@@ -241,8 +245,8 @@ function renderMainView() {
     <section class="content-block">
       <div class="section-head">
         <div>
-          <p class="eyebrow">Radiology Scenarios</p>
-          <h3>How the unit looks in real work</h3>
+          <p class="eyebrow">${scenarioEyebrow}</p>
+          <h3>${scenarioTitle}</h3>
         </div>
       </div>
       <div class="scenario-grid">
@@ -265,7 +269,7 @@ function renderMainView() {
     <section class="content-block" id="quizAnchor">
       <div class="section-head">
         <div>
-          <p class="eyebrow">Optional Practice</p>
+          <p class="eyebrow">Optional Exam Practice</p>
           <h3>Use this only if you want to check yourself</h3>
         </div>
         <button
@@ -277,7 +281,7 @@ function renderMainView() {
         </button>
       </div>
       <p class="practice-note">
-        This site is meant to explain first. You can skip this section and still use the app normally.
+        This practice uses course-style BIT203 content. The radiology mode is only an optional analogy layer.
       </p>
       ${state.practiceOpen ? `
         <div class="quiz-grid">
@@ -317,7 +321,7 @@ function renderGuidedLesson(unit) {
           <p>${highlight(unit.guidedLesson.whyItMatters)}</p>
         </article>
         <article class="teaching-card">
-          <p class="concept-term">At work</p>
+          <p class="concept-term">Course example</p>
           <p>${highlight(unit.guidedLesson.atWork)}</p>
         </article>
         <article class="teaching-card emphasis">
@@ -396,7 +400,9 @@ function renderGlossary() {
     <article class="glossary-card">
       <p class="concept-term">${highlight(entry.term)}</p>
       <p>${highlight(entry.plain)}</p>
-      <p class="glossary-radiology">${highlight(entry.radiology)}</p>
+      ${state.mode === "radiology" ? `
+        <p class="glossary-radiology">${highlight(entry.radiology)}</p>
+      ` : ""}
     </article>
   `).join("") : `
     <div class="empty-state">

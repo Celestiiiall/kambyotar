@@ -1,6 +1,6 @@
-# RadTech BIT203 Study Companion
+# BIT203 Study Companion
 
-This repository contains a static study website that rewrites BIT203 Units 1 to 5 for a non-IT learner who works as a radiologic technologist.
+This repository contains a static study website that rewrites BIT203 Units 1 to 5 in simpler language for a non-IT learner, while keeping the core explanations and practice aligned with the actual BIT203 exam content.
 
 The content structure was built from these lecture decks:
 
@@ -13,10 +13,10 @@ The content structure was built from these lecture decks:
 ## What the site includes
 
 - Plain-English explanations for each unit
-- A radiology-specific interpretation of the same concepts
+- An optional radiology lens for users who want a familiar analogy
 - Exam-oriented wording for revision
-- Mini quizzes with browser-saved progress
-- A glossary that translates IT terms into imaging workflow examples
+- Optional practice questions with browser-saved progress
+- A glossary with course meanings and optional radiology translations
 - A study checklist for final review
 
 ## Run it
