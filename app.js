@@ -172,6 +172,7 @@ function renderMainView() {
   const concepts = unit.concepts.filter((concept) => matchesQuery([
     concept.term,
     concept.memoryHook,
+    concept.silly || "",
     concept.plain,
     concept.radiology,
     concept.exam
@@ -268,7 +269,7 @@ function renderConceptCard(concept) {
     <article class="concept-card">
       <p class="concept-term">${highlight(concept.term)}</p>
       <h3>${highlight(concept.memoryHook)}</h3>
-      <p>${highlight(concept[state.mode])}</p>
+      <p>${highlight(getConceptBody(concept))}</p>
     </article>
   `;
 }
@@ -458,6 +459,10 @@ function createEmptyProgress() {
     answers: {},
     checklist: {}
   };
+}
+
+function getConceptBody(concept) {
+  return concept[state.mode] || concept.plain;
 }
 
 function highlight(text) {
