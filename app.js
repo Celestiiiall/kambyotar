@@ -1,9 +1,10 @@
 const STORAGE_KEY = "radtech-bit203-study-progress-v1";
 
 const state = {
-  mode: "plain",
+  mode: "silly",
   unitIndex: 0,
   query: "",
+  practiceOpen: false,
   progress: loadProgress()
 };
 
@@ -14,7 +15,7 @@ const glossaryList = document.querySelector("#glossaryList");
 const revisionChecklist = document.querySelector("#revisionChecklist");
 const masterySnapshot = document.querySelector("#masterySnapshot");
 const searchInput = document.querySelector("#searchInput");
-const jumpToQuizButton = document.querySelector("#jumpToQuizButton");
+const jumpToSillyButton = document.querySelector("#jumpToSillyButton");
 const jumpToGlossaryButton = document.querySelector("#jumpToGlossaryButton");
 const resetProgressButton = document.querySelector("#resetProgressButton");
 const unitCount = document.querySelector("#unitCount");
@@ -46,11 +47,12 @@ function wireEvents() {
     renderGlossary();
   });
 
-  jumpToQuizButton.addEventListener("click", () => {
-    const quizSection = document.querySelector("#quizAnchor");
-    if (quizSection) {
-      quizSection.scrollIntoView({ behavior: "smooth", block: "start" });
-    }
+  jumpToSillyButton.addEventListener("click", () => {
+    state.mode = "silly";
+    renderModeSwitcher();
+    renderMainView();
+    renderGlossary();
+    unitDetail.scrollIntoView({ behavior: "smooth", block: "start" });
   });
 
   jumpToGlossaryButton.addEventListener("click", () => {
@@ -58,7 +60,7 @@ function wireEvents() {
   });
 
   resetProgressButton.addEventListener("click", () => {
-    if (!window.confirm("Reset your saved quiz answers and checklist progress for this browser?")) {
+    if (!window.confirm("Reset your saved practice answers and checklist progress for this browser?")) {
       return;
     }
 
@@ -78,6 +80,7 @@ function wireEvents() {
     }
 
     state.unitIndex = Number(button.dataset.unitIndex);
+    state.practiceOpen = false;
     renderUnitNav();
     renderMainView();
     window.scrollTo({ top: 0, behavior: "smooth" });
@@ -96,6 +99,13 @@ function wireEvents() {
   });
 
   unitDetail.addEventListener("click", (event) => {
+    const practiceToggle = event.target.closest("[data-toggle-practice]");
+    if (practiceToggle) {
+      state.practiceOpen = practiceToggle.dataset.togglePractice === "open";
+      renderMainView();
+      return;
+    }
+
     const answerButton = event.target.closest("[data-question-id]");
     if (!answerButton) {
       return;
@@ -161,7 +171,7 @@ function renderUnitNav() {
         <div class="progress-track" aria-hidden="true">
           <span class="progress-fill" style="width: ${score.percent}%;"></span>
         </div>
-        <span class="unit-card-score">${score.correct}/${score.total} quiz correct</span>
+        <span class="unit-card-score">${score.correct}/${score.total} practice correct</span>
       </button>
     `;
   }).join("");
@@ -209,6 +219,8 @@ function renderMainView() {
       </section>
     </div>
 
+    ${renderGuidedLesson(unit)}
+
     <section class="content-block">
       <div class="section-head">
         <div>
@@ -253,13 +265,72 @@ function renderMainView() {
     <section class="content-block" id="quizAnchor">
       <div class="section-head">
         <div>
-          <p class="eyebrow">Mini Quiz</p>
-          <h3>Check your understanding before moving on</h3>
+          <p class="eyebrow">Optional Practice</p>
+          <h3>Use this only if you want to check yourself</h3>
+        </div>
+        <button
+          type="button"
+          class="ghost-button"
+          data-toggle-practice="${state.practiceOpen ? "closed" : "open"}"
+        >
+          ${state.practiceOpen ? "Hide practice" : "Show practice"}
+        </button>
+      </div>
+      <p class="practice-note">
+        This site is meant to explain first. You can skip this section and still use the app normally.
+      </p>
+      ${state.practiceOpen ? `
+        <div class="quiz-grid">
+          ${unit.quiz.map(renderQuizCard).join("")}
+        </div>
+      ` : `
+        <div class="practice-closed">
+          <p>Practice questions are hidden so the page stays explanation-focused.</p>
+        </div>
+      `}
+    </section>
+  `;
+}
+
+function renderGuidedLesson(unit) {
+  const sectionTitle = state.mode === "silly"
+    ? "Start here if the topic feels confusing"
+    : "Understand the idea before memorizing the terms";
+  const sectionEyebrow = state.mode === "silly" ? "Teach Me First" : "Guided Explanation";
+
+  return `
+    <section class="content-block">
+      <div class="section-head">
+        <div>
+          <p class="eyebrow">${sectionEyebrow}</p>
+          <h3>${sectionTitle}</h3>
         </div>
       </div>
-      <div class="quiz-grid">
-        ${unit.quiz.map(renderQuizCard).join("")}
+      <p class="teaching-intro">${highlight(unit.guidedLesson.intro)}</p>
+      <div class="teaching-grid">
+        <article class="teaching-card">
+          <p class="concept-term">What it means</p>
+          <p>${highlight(unit.guidedLesson.bigIdea)}</p>
+        </article>
+        <article class="teaching-card">
+          <p class="concept-term">Why it matters</p>
+          <p>${highlight(unit.guidedLesson.whyItMatters)}</p>
+        </article>
+        <article class="teaching-card">
+          <p class="concept-term">At work</p>
+          <p>${highlight(unit.guidedLesson.atWork)}</p>
+        </article>
+        <article class="teaching-card emphasis">
+          <p class="concept-term">Say it back simply</p>
+          <p>${highlight(unit.guidedLesson.sayBack)}</p>
+        </article>
       </div>
+      <article class="teaching-steps-card">
+        <p class="concept-term">The idea in tiny steps</p>
+        <ol class="teaching-steps">
+          ${unit.guidedLesson.steps.map((step) => `<li>${highlight(step)}</li>`).join("")}
+        </ol>
+      </article>
     </section>
   `;
 }
@@ -357,11 +428,11 @@ function renderSnapshot() {
   masterySnapshot.innerHTML = `
     <div class="snapshot-metric">
       <strong>${totalMastery.correct}/${totalMastery.total}</strong>
-      <span>Total quiz answers correct</span>
+      <span>Total practice answers correct</span>
     </div>
     <div class="snapshot-metric">
       <strong>${totalMastery.percent}%</strong>
-      <span>Mastery across all units</span>
+      <span>Practice progress across all units</span>
     </div>
     <div class="snapshot-metric">
       <strong>${checkedItems}/${window.STUDY_DATA.checklist.length}</strong>
@@ -418,7 +489,7 @@ function getNextStudyTarget() {
     }
   }
 
-  return "All unit quizzes are correct. Use the checklist and glossary for final revision.";
+  return "All optional practice is complete. Use the guided explanations, checklist, and glossary for final revision.";
 }
 
 function matchesQuery(values) {

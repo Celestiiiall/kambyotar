@@ -407,6 +407,7 @@ input {
 .callout-grid,
 .concept-grid,
 .scenario-grid,
+.teaching-grid,
 .quiz-grid,
 .glossary-list {
   display: grid;
@@ -420,6 +421,8 @@ input {
 .callout-card,
 .concept-card,
 .scenario-card,
+.teaching-card,
+.teaching-steps-card,
 .quiz-card,
 .glossary-card,
 .empty-state {
@@ -438,6 +441,7 @@ input {
 }
 
 .concept-grid,
+.teaching-grid,
 .glossary-list {
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
@@ -454,8 +458,29 @@ input {
 
 .scenario-summary,
 .scenario-takeaway,
-.glossary-radiology {
+.glossary-radiology,
+.teaching-intro,
+.practice-note {
   color: var(--ink-soft);
+}
+
+.teaching-card.emphasis,
+.teaching-steps-card,
+.practice-closed {
+  background: linear-gradient(155deg, rgba(31, 124, 120, 0.12), rgba(255, 255, 255, 0.86));
+}
+
+.teaching-steps-card,
+.practice-closed {
+  padding: 1.15rem;
+  border-radius: 22px;
+  border: 1px solid rgba(23, 48, 66, 0.08);
+}
+
+.teaching-steps {
+  margin: 0;
+  padding-left: 1.25rem;
+  line-height: 1.7;
 }
 
 .scenario-steps,
@@ -521,6 +546,10 @@ input {
 .quiz-feedback {
   margin: 0.95rem 0 0;
   color: var(--ink-soft);
+}
+
+.practice-note {
+  margin: -0.35rem 0 0;
 }
 
 .revision-checklist {

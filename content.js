@@ -30,6 +30,18 @@ window.STUDY_DATA = {
       objective: "Understand why information systems matter and what makes up a complete information system.",
       quickWin: "If the lecture says 'business objectives,' think about how an imaging department tries to reduce waiting time, avoid repeat exams, and move reports faster.",
       examFocus: "Know the difference between information technology and information systems, the input-processing-output-feedback cycle, and the six strategic business objectives.",
+      guidedLesson: {
+        intro: "This unit is basically saying that good computer systems help people work with the right information instead of guessing.",
+        bigIdea: "A system is not just a machine. It is the machine, the people, the rules, and the information all working together.",
+        whyItMatters: "When information is clear and shared properly, work gets faster, mistakes drop, and decisions get better.",
+        atWork: "In radiology, this is the difference between everyone chasing paper and everyone seeing the same order, worklist, images, and report flow.",
+        sayBack: "A simple way to explain this unit is: systems help people collect information, use it, and act on it better.",
+        steps: [
+          "Information goes into the system.",
+          "The system organizes or changes it into something useful.",
+          "People use the result to do the job better and fix problems faster."
+        ]
+      },
       concepts: [
         {
           term: "Information system vs. information technology",
@@ -139,6 +151,18 @@ window.STUDY_DATA = {
       objective: "Learn how processes flow through an organization, how different systems support different managers, and how systems create strategic value.",
       quickWin: "Translate 'order fulfillment' into 'exam fulfillment': booking, preparation, imaging, reporting, billing, and follow-up.",
       examFocus: "Know business processes, TPS/MIS/DSS/ESS, enterprise applications, collaboration tools, and Porter's competitive forces with IT strategies.",
+      guidedLesson: {
+        intro: "This unit says work happens in steps, and different systems help different people at different levels.",
+        bigIdea: "A business process is just the full chain of work from beginning to end, not one tiny task in the middle.",
+        whyItMatters: "If one step is slow or disconnected, the whole process suffers. Good systems connect the chain.",
+        atWork: "In imaging, the process starts with the order and ends when the report reaches the right person and billing is complete.",
+        sayBack: "A simple way to explain this unit is: systems help the daily work, help managers see reports, and help organizations link departments together.",
+        steps: [
+          "Daily systems record the work being done.",
+          "Management systems summarize what happened.",
+          "Larger enterprise systems connect departments so the work flows better."
+        ]
+      },
       concepts: [
         {
           term: "Business processes",
@@ -248,6 +272,18 @@ window.STUDY_DATA = {
       objective: "Understand the technology foundation an organization needs and the main trends affecting hardware, software, and cost decisions.",
       quickWin: "If a modality room cannot send images, the problem may be in the infrastructure, not the scanner alone.",
       examFocus: "Know the meaning of IT infrastructure, its major components, hardware and software trends, and the management ideas of scalability, governance, and total cost of ownership.",
+      guidedLesson: {
+        intro: "This unit is about the hidden tech foundation underneath the apps people actually see.",
+        bigIdea: "Infrastructure is the support system for the support systems. It keeps the computers, storage, internet, and software alive.",
+        whyItMatters: "If the foundation is weak, even good software feels broken, slow, or unreliable.",
+        atWork: "When PACS is slow, the scanner may be fine. The real issue might be the server, storage, network, or cloud setup behind it.",
+        sayBack: "A simple way to explain this unit is: infrastructure is the base layer that lets all the other technology work.",
+        steps: [
+          "Build the technical foundation with hardware, software, storage, and networks.",
+          "Choose how it should grow, who controls it, and how much it really costs.",
+          "Keep adjusting as technology changes, like cloud, mobile, and virtualization."
+        ]
+      },
       concepts: [
         {
           term: "What IT infrastructure really means",
@@ -356,6 +392,18 @@ window.STUDY_DATA = {
       objective: "Understand why databases are better than separate files and how data can be organized for analysis and decision making.",
       quickWin: "If patient details are different in two systems, you are already seeing the file-environment problem this unit describes.",
       examFocus: "Know file environment problems, DBMS capabilities, relational concepts, keys, database design, and business intelligence tools such as data warehouses.",
+      guidedLesson: {
+        intro: "This unit is mostly about keeping information in one organized place instead of letting it scatter everywhere.",
+        bigIdea: "A database is a shared organized storage space for information. A DBMS helps people use it safely and properly.",
+        whyItMatters: "When everyone stores the same data in different places, errors and confusion grow fast.",
+        atWork: "If a patient's phone number is different in registration, imaging, and billing, the department wastes time and makes mistakes.",
+        sayBack: "A simple way to explain this unit is: databases stop information from being duplicated, mismatched, and hard to find.",
+        steps: [
+          "Put related information into organized tables.",
+          "Use keys so the right pieces of information connect correctly.",
+          "Use reports and analysis tools to learn from the stored data."
+        ]
+      },
       concepts: [
         {
           term: "Why separate files cause problems",
@@ -464,6 +512,18 @@ window.STUDY_DATA = {
       objective: "Understand how systems are created, how they change organizations, and what development approaches are available.",
       quickWin: "Think about implementing a new booking portal or replacing a paper-based contrast screening workflow. That is systems building in a clinical setting.",
       examFocus: "Know the levels of organizational change, the systems development process, structured vs. object-oriented design, prototyping, traditional life cycle, and outsourcing.",
+      guidedLesson: {
+        intro: "This unit explains how a new system goes from 'we have a problem' to 'the new tool is now live and people are using it.'",
+        bigIdea: "Systems are built in stages. Good teams do not just jump into coding and hope for the best.",
+        whyItMatters: "If a system is built without understanding the real problem, people end up with a shiny tool that does not actually help.",
+        atWork: "If a hospital wants a better booking portal, it should study the current mess first, design the fix, test it with real staff, then roll it out carefully.",
+        sayBack: "A simple way to explain this unit is: first understand the problem, then design the fix, build it, test it, launch it, and keep improving it.",
+        steps: [
+          "Study the problem and decide what the new system must do.",
+          "Design and build the solution, then test it carefully.",
+          "Move people to the new system and keep supporting it after launch."
+        ]
+      },
       concepts: [
         {
           term: "Systems development and organizational change",
